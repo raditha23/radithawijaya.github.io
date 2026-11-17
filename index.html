@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio & Resume Kuliah | I Ketut Raditha Wijaya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent: '#38bdf8',
+                        secondary: '#818cf8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, -40px) scale(1.1); }
+        }
+        .cursor-blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Background Ambient Blobs -->
+    <div class="blob bg-sky-500 w-96 h-96 rounded-full top-0 left-0"></div>
+    <div class="blob bg-indigo-600 w-96 h-96 rounded-full bottom-1/4 right-0" style="animation-delay: 2s;"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold tracking-tight gradient-text">Raditha.</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#beranda" class="hover:text-sky-400 transition">Beranda</a>
+                <a href="#data-diri" class="hover:text-sky-400 transition">Data Diri</a>
+                <a href="#pendidikan" class="hover:text-sky-400 transition">Pendidikan</a>
+                <a href="#resume" class="hover:text-sky-400 transition">Resume</a>
+                <a href="#keahlian" class="hover:text-sky-400 transition">Keahlian</a>
+                <a href="#kontak" class="hover:text-sky-400 transition">Kontak</a>
+            </div>
+
+            <a href="#kontak" class="hidden md:inline-block px-5 py-2.5 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-sm font-semibold hover:opacity-90 transition shadow-lg shadow-sky-500/25">
+                Hubungi Saya
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 space-y-3 bg-slate-900/95 border-b border-slate-800">
+            <a href="#beranda" class="block py-2 text-slate-300 hover:text-sky-400">Beranda</a>
+            <a href="#data-diri" class="block py-2 text-slate-300 hover:text-sky-400">Data Diri</a>
+            <a href="#pendidikan" class="block py-2 text-slate-300 hover:text-sky-400">Pendidikan</a>
+            <a href="#resume" class="block py-2 text-slate-300 hover:text-sky-400">Resume</a>
+            <a href="#keahlian" class="block py-2 text-slate-300 hover:text-sky-400">Keahlian</a>
+            <a href="#kontak" class="block py-2 text-sky-400 font-semibold">Hubungi Saya</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section / Beranda -->
+    <section id="beranda" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sky-400 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    Mahasiswa Sistem Komputer
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                    Halo, Saya <br>
+                    <span class="gradient-text">I Ketut Raditha Wijaya</span>
+                </h1>
+                
+                <div class="text-xl md:text-2xl font-medium text-slate-300 h-8">
+                    Fokus pada <span id="typing-text" class="text-sky-400 font-bold"></span><span class="cursor-blink">|</span>
+                </div>
+
+                <p class="text-slate-400 leading-relaxed max-w-lg">
+                    Mahasiswa Program Studi Sistem Komputer yang antusias mengeksplorasi integrasi perangkat keras (hardware), Internet of Things (IoT), sistem tertanam (embedded systems), dan Cloud Computing.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#resume" class="px-7 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold transition flex items-center gap-2 shadow-lg shadow-sky-500/25">
+                        Lihat Resume Kuliah <i data-lucide="book-open" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#data-diri" class="px-7 py-3.5 rounded-xl glass hover:bg-slate-800 text-white font-semibold transition">
+                        Data Diri
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center gap-5 pt-4 text-slate-400">
+                    <a href="#" class="hover:text-sky-400 transition transform hover:-translate-y-1"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-sky-400 transition transform hover:-translate-y-1"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-sky-400 transition transform hover:-translate-y-1"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-sky-400 transition transform hover:-translate-y-1"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <!-- Profile Card / Visual -->
+            <div class="relative flex justify-center">
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-sky-500 to-indigo-500 rounded-3xl rotate-6 opacity-50 blur-lg"></div>
+                    <div class="relative w-full h-full rounded-3xl overflow-hidden glass p-3">
+                        <img src="foto.jpg" 
+                             alt="Foto I Ketut Raditha Wijaya" 
+                             class="w-full h-full object-cover object-top rounded-2xl">
+                    </div>
+                    
+                    <!-- Floating Badge 1 -->
+                    <div class="absolute -bottom-5 -left-5 glass px-5 py-3 rounded-2xl flex items-center gap-3 shadow-xl">
+                        <div class="p-2 bg-sky-500/20 rounded-lg text-sky-400">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Program Studi</p>
+                            <p class="font-bold text-sm">Sistem Komputer</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 -->
+                    <div class="absolute -top-5 -right-5 glass px-5 py-3 rounded-2xl flex items-center gap-3 shadow-xl">
+                        <div class="p-2 bg-indigo-500/20 rounded-lg text-indigo-400">
+                            <i data-lucide="cloud" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Minat Utama</p>
+                            <p class="font-bold text-sm">Cloud & IoT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Diri Section -->
+    <section id="data-diri" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Data <span class="gradient-text">Diri</span></h2>
+                <p class="text-slate-400">Informasi pribadi dan latar belakang akademik.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl md:col-span-2 space-y-4">
+                    <h3 class="text-2xl font-bold text-white">I Ketut Raditha Wijaya</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        Saya adalah mahasiswa aktif Program Studi <strong>Sistem Komputer</strong> yang memiliki ketertarikan mendalam pada teknologi perangkat keras dan komputasi awan. Berkomitmen untuk terus belajar mengembangkan solusi teknologi yang efisien dan andal.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-700/50">
+                        <div>
+                            <p class="text-xs text-slate-400">Program Studi</p>
+                            <p class="font-semibold text-sky-400">Sistem Komputer</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Domisili</p>
+                            <p class="font-semibold text-sky-400">Bali, Indonesia</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Minat Utama</p>
+                            <p class="font-semibold text-sky-400">Cloud & IoT</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pendidikan" class="glass p-8 rounded-3xl space-y-6">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="text-sky-400"></i> Pendidikan
+                    </h3>
+                    <div class="space-y-4 border-l-2 border-slate-700 pl-4">
+                        <div>
+                            <span class="text-xs text-sky-400 font-semibold">Saat Ini</span>
+                            <h4 class="font-bold text-white">S1 Sistem Komputer</h4>
+                            <p class="text-xs text-slate-400">Mendalami sistem tertanam, arsitektur komputer, jaringan, dan komputasi awan (Cloud Computing).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Mata Kuliah Section (Sesuai Gambar) -->
+    <section id="resume" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-4">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Dokumentasi Perkuliahan
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Resume <span class="gradient-text">Mata Kuliah</span></h2>
+                <p class="text-slate-400">Catatan dan ringkasan materi perkuliahan Cloud Computing dari pertemuan ke pertemuan.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Pertemuan 1 -->
+                <div class="glass p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-sky-500/15 text-sky-400">Pertemuan 1</span>
+                            <i data-lucide="cloud" class="w-5 h-5 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Pengantar Cloud Computing</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Cloud Computing merupakan teknologi yang memungkinkan pengguna menyimpan dan menjalankan aplikasi melalui internet tanpa harus memiliki server sendiri. Teknologi ini memudahkan pengguna mengakses data kapan saja dan dari berbagai perangkat[cite: 1].
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-700/50">
+                        <span class="text-[10px] text-slate-400 font-medium">Topik: Konsep Dasar & Fleksibilitas Akses</span>
+                    </div>
+                </div>
+
+                <!-- Pertemuan 2 -->
+                <div class="glass p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-400">Pertemuan 2</span>
+                            <i data-lucide="layers" class="w-5 h-5 text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Jenis Layanan & Risiko</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Cloud Computing memiliki tiga jenis layanan, yaitu IaaS, PaaS, dan SaaS. Contohnya AWS, Google App Engine, dan Google Docs. Kekurangnya antara lain bergantung pada internet, risiko kebocoran data, gangguan server, dan biaya berlangganan[cite: 1].
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-700/50">
+                        <span class="text-[10px] text-slate-400 font-medium">Topik: Model Layanan Utama & Tantangan Cloud</span>
+                    </div>
+                </div>
+
+                <!-- Pertemuan 3 -->
+                <div class="glass p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/15 text-purple-400">Pertemuan 3</span>
+                            <i data-lucide="app-window" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">SaaS (Software as a Service)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            SaaS (Software as a Service) merupakan layanan aplikasi yang bisa digunakan secara online tanpa perlu melakukan instalasi dan mengelola server sendiri. Contohnya Google Docs, Gmail, Canva, dan Microsoft 365[cite: 1].
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-700/50">
+                        <span class="text-[10px] text-slate-400 font-medium">Topik: Karakteristik & Contoh Aplikasi SaaS</span>
+                    </div>
+                </div>
+
+                <!-- Pertemuan 4 -->
+                <div class="glass p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400">Pertemuan 4</span>
+                            <i data-lucide="server" class="w-5 h-5 text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Penerapan & Studi Kasus SaaS</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Pada pertemuan ini dibahas contoh penggunaan SaaS di berbagai bidang, seperti SiteMinder untuk pengelolaan hotel dan industri perhotelan[cite: 1].
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-700/50">
+                        <span class="text-[10px] text-slate-400 font-medium">Topik: Implementasi Nyata SaaS Industri</span>
+                    </div>
+                </div>
+
+                <!-- Pertemuan 5 -->
+                <div class="glass p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-yellow-500/15 text-yellow-400">Pertemuan 5</span>
+                            <i data-lucide="hard-drive" class="w-5 h-5 text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">IaaS (Infrastructure as a Service)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            IaaS (Infrastructure as a Service) merupakan layanan yang menyediakan infrastruktur komputer melalui internet, mencakup sumber daya server virtual dasar[cite: 1].
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-700/50">
+                        <span class="text-[10px] text-slate-400 font-medium">Topik: Dasar Penyediaan Infrastruktur Virtual</span>
+                    </div>
+                </div>
+
+                <!-- Pertemuan 6 -->
+                <div class="glass p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-sky-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-rose-500/15 text-rose-400">Pertemuan 6</span>
+                            <i data-lucide="cpu" class="w-5 h-5 text-rose-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Implementasi Layanan IaaS</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Pada pertemuan ini dibahas contoh layanan IaaS, seperti Amazon EC2, Azure Virtual Machines, dan Google Compute Engine yang mendukung skalabilitas komputasi[cite: 1].
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-700/50">
+                        <span class="text-[10px] text-slate-400 font-medium">Topik: Provider Utama & Konfigurasi VM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian Section -->
+    <section id="keahlian" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Keahlian & <span class="gradient-text">Teknologi</span></h2>
+                <p class="text-slate-400">Bidang dan perangkat yang saya pelajari dalam studi Sistem Komputer.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass p-6 rounded-2xl text-center hover:border-sky-500/50 transition group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center group-hover:scale-110 transition">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold">Mikrokontroler</h3>
+                    <p class="text-xs text-slate-400 mt-1">Arduino, ESP32 & Sensor</p>
+                </div>
+
+                <div class="glass p-6 rounded-2xl text-center hover:border-sky-500/50 transition group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition">
+                        <i data-lucide="wifi" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold">Internet of Things</h3>
+                    <p class="text-xs text-slate-400 mt-1">Otomasi & Monitoring</p>
+                </div>
+
+                <div class="glass p-6 rounded-2xl text-center hover:border-sky-500/50 transition group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center group-hover:scale-110 transition">
+                        <i data-lucide="cloud" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold">Cloud Computing</h3>
+                    <p class="text-xs text-slate-400 mt-1">IaaS, PaaS & SaaS</p>
+                </div>
+
+                <div class="glass p-6 rounded-2xl text-center hover:border-sky-500/50 transition group">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center group-hover:scale-110 transition">
+                        <i data-lucide="code-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold">Web Development</h3>
+                    <p class="text-xs text-slate-400 mt-1">HTML, CSS & Tailwind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-12 text-center space-y-6">
+            <h2 class="text-3xl md:text-4xl font-bold">Tertarik Berdiskusi atau <span class="gradient-text">Sekadar Menyapa?</span></h2>
+            <p class="text-slate-400 max-w-xl mx-auto">
+                Silakan kirim pesan jika ingin berdiskusi seputar Sistem Komputer, Cloud Computing, atau kolaborasi teknologi lainnya.
+            </p>
+            
+            <form id="contact-form" class="max-w-md mx-auto space-y-4 text-left pt-4">
+                <div>
+                    <input type="text" placeholder="Nama Anda" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-sky-400 focus:outline-none text-white">
+                </div>
+                <div>
+                    <input type="email" placeholder="Email Anda" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-sky-400 focus:outline-none text-white">
+                </div>
+                <div>
+                    <textarea rows="4" placeholder="Tulis pesan Anda di sini..." required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 focus:border-sky-400 focus:outline-none text-white"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 font-bold text-white hover:opacity-90 transition shadow-lg shadow-sky-500/25">
+                    Kirim Pesan
+                </button>
+            </form>
+            <p id="form-status" class="text-sm text-emerald-400 hidden font-medium">Terima kasih! Pesan Anda telah berhasil terkirim.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-500 text-sm border-t border-slate-800/80">
+        <p>© 2026 I Ketut Raditha Wijaya — Mahasiswa Sistem Komputer.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Efek Mengetik Otomatis (Typing Effect)
+        const roles = ["Sistem Komputer", "Cloud Computing", "Internet of Things", "Web Development"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                speed = 500;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+        typeEffect();
+
+        // Simulasi Pengiriman Form Kontak
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            status.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => status.classList.add('hidden'), 5000);
+        });
+    </script>
+</body>
+</html>
